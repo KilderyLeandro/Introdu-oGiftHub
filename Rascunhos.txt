@@ -1,0 +1,485 @@
+https://drive.google.com/drive/folders/1hOl0DaPeAor7gnhKBUIlZ5n8lLRDNvUY
+
+nome = input("Digite seu nome:")
+nota1 = float(input("Digite a nota 1:"))
+nota1 = float(input("Digite a nota 2:"))
+nota1 = float(input("Digite a nota 3:"))
+
+soma = nota1 + nota2 + nota3
+
+media = soma/3
+
+
+
+if media >= 7:
+	print(f"{nome} você foi aprovado!")
+elif media <=5:
+	print(f"{nome} você foi reprovado!")
+elif media<7 and media>5:
+	print(f"{nome} você está de recuperação!")
+else:
+	print("inválido")
+
+------------------------
+nomes - ['Pedro', 'João', 'Leiticia']
+for n in nomes: 
+	print(n)
+----------------------------------------
+
+print(nomes[0:3])
+
+for i in range(3):
+	print(nomes[i])
+
+------------------------
+contador = 0 
+
+while contador < 5:
+	print(contador)
+	contador = contador +1
+-------------------------------
+while True:
+
+	cpf = input("Insira seu CPF:")
+	if len(cpf) != 11:
+		pass
+	else:
+		break
+
+print("O cpf não tem 11 digitos")
+
+-----------------------------
+
+while True:
+
+	cpf = input("Insira seu CPF:")
+	if len(cpf) != 11:
+	print("O cpf deve ter 11 digitos")
+	else:
+		break
+
+------------------------
+print("100 - Hot Dog - R$ 1,10")
+print("101 - Hot Dog - R$ 1,40")
+print("102 - Hot Dog - R$ 1,50")
+
+codigo = int(input("Digite o código do seu pedido:"))
+qtd = int(input("Digite a quantidade: "))
+--------------------------------------------
+
+for i in range(1,11):
+	calculo = i*13
+	print(f"{i}. {i}x13 = {i*13} = {calculo}" )
+----------------------------------------
+def Quest 2():
+	Quantidade = 0
+	
+	for i range(10):
+		numero = int(input("Insira um número"))
+	
+	if numero >= 10 and numero <=50:
+		quantidade = quantidade + 1
+
+print("Numeros dentro do intervalo é", quantidade)
+----------------------------------------------------
+for i in range(5):
+    numero = int(input("Digite um inteiro:"))
+if  menor == 0:
+    menor = numero
+elif numero <= menor:
+     menor = numero
+print("O menor numero inserido foi:",menor)	
+
+
+codecombat.com/students?_cc=Stop0nlySword
+
+
+
+if numero <= menor:
+	   menor = numero:
+(print)menor
+
+-----------------------------
+	num1 = int(input("Escreva o número 1: "))
+	num2 = int(input("Escreva o número 2: "))
+	num3 = int(input("Escreva o número 3: "))
+	
+	lista = [num1,num2,num3]
+	lista.sort(reverse=true)
+	
+	print(lista)
+
+------------------------------	
+
+	def questao4Simples():
+    num1 = int(input("Escreva o número 1: "))
+    num2 = int(input("Escreva o número 2: "))
+    num3 = int(input("Escreva o número 3: "))
+
+    lista = [num1,num2,num3]
+    lista.sort(reverse=True)
+
+    print(lista)
+
+def questao4Complexa():
+
+    num1 = int(input("Escreva o número 1: "))
+    num2 = int(input("Escreva o número 2: "))
+    num3 = int(input("Escreva o número 3: "))
+
+    primeiro = None
+    segundo = None
+    terceiro = None
+
+    if (num1 != num2 and num1 != num3 and num2 != num3):
+
+        if(num1 > num2 and num1 > num3):
+            primeiro = num1
+            if (num2 > num3):
+                segundo = num2
+                terceiro = num3
+            else:
+                segundo = num3
+                terceiro = num2
+
+        elif (num2 > num1 and num2 > num3):
+            primeiro = num2
+            if (num1 > num3):
+                segundo = num1
+                terceiro = num3
+            else:
+                segundo = num3
+                terceiro = num1
+
+        else:
+            primeiro = num3
+            if (num1 > num2):
+                segundo = num1
+                terceiro = num2
+            else:
+                segundo = num2
+                terceiro = num1
+        
+        print(primeiro,segundo,terceiro)
+    
+
+    else:
+        print("Você escreveu números iguais.")
+
+
+
+Else:		
+	print("Você escreveu números iguais.")
+
+------------------------------------------
+codigo = input("Insira o código do produto escolhido: ")
+    
+    quantidade = int(input("Quantos deseja comprar: "))
+
+    preco = 0
+    nome = ""
+
+    if codigo == "100":
+        nome = "Cachorro Quente"
+        preco = 1.10
+    elif codigo == "101":
+        nome = "Bauru Simples"
+        preco = 1.30
+    elif codigo == "102":
+        nome = "Bauru c/ ovo"
+        preco = 1.50
+    elif codigo == "103":
+        nome = "Hamburguer"
+        preco = 1.10
+    elif codigo == "104":
+        nome = "Cheeseburguer"
+        preco = 1.30
+    elif codigo == "105":
+        nome = "Refrigerante"
+        preco = 1.00
+
+    # match codigo:
+    #     case "100":
+    #         nome = "Cachorro Quente"
+    #         preco = 1.10
+    #     case "101":
+    #         nome = "Bauru Simples"
+    #         preco = 1.30
+    #     case "102":
+    #         nome = "Bauru c/ ovo"
+    #         preco = 1.50
+    #     case "103":
+    #         nome = "Hamburguer"
+    #         preco = 1.10
+    #     case "104":
+    #         nome = "Cheeseburguer"
+    #         preco = 1.30
+    #     case "105":
+    #         nome = "Refrigerante"
+    #         preco = 1.00
+        
+
+    valorTotal = preco * quantidade
+    print(f"Você comprou {quantidade} {nome} por R$ {valorTotal}")
+------------------------------------------
+codigo = input("Insira o código do produto escolhido: ")
+
+quantidade = int(input("Quantos deseja comprar: "))
+
+preco = 0
+nome = ""
+
+if codigo == "100" or codigo "101" or codigo "102" or codigo "103" or codigo "104" or codigo "105"
+codigos = ("100", "101", "102", "103", "104", "105")
+codigos = 
+
+if codigo == "100":
+	nome = "Cachorro Quente"
+	preco = 1.10
+elif codigo == "101":
+	nome = "Bauru Simples"
+	preco = 1.30
+elif codigo == "102":
+	nome = "Bauru c/ ovo"
+	preco = 1.50
+elif codigo == "103":
+	nome = "Hamburguer"
+	preco = 1.10
+elif codigo == "104":
+	nome = "Cheeseburguer"
+	preco = 1.30
+elif codigo == "105":
+	nome = "Refrigerante"
+	preco = 1.00
+
+# match codigo:
+#     case "100":
+#         nome = "Cachorro Quente"
+#         preco = 1.10
+#     case "101":
+#         nome = "Bauru Simples"
+#         preco = 1.30
+#     case "102":
+#         nome = "Bauru c/ ovo"
+#         preco = 1.50
+#     case "103":
+#         nome = "Hamburguer"
+#         preco = 1.10
+#     case "104":
+#         nome = "Cheeseburguer"
+#         preco = 1.30
+#     case "105":
+#         nome = "Refrigerante"
+#         preco = 1.00
+	
+
+valorTotal = preco * quantidade
+print(f"Você comprou {quantidade} {nome} por R${valorTotal}")
+	else:
+	print("Insira um código válido")
+-------------------------------------------
+metodo for
+	
+	for i in range(1,11):
+		tabuada = 13 * i
+	print(f"13 x {i} = {tabuada}")
+	
+metodo while
+	contador = 1
+	while contador <=10:
+	tabuada = 13 * contador
+	print(f"13 x {contador} = {tabuada}")
+	contador = contador + 1
+---------------------------------
+numeroNoIntervalo = 0
+
+	for i in range(10):
+	numero = float(input("Digite um número:"))
+	
+	if numero >= 10 and numero <= 50:
+	numerosNoIntervalo = numerosNoIntervalo + 1
+	(print"Quantidade de números entre 10 e 50:",numerosNoIntervalo)
+-------------------------------------
+for i in range (5):
+	numero = int(input("Insira um número inteiro: "))
+	
+if i menor == 0:
+	menor = numero
+else:	
+	if numero < menor:
+	menor = numero
+(print"O menor número foi", menor) 
+---------------------------------------
+soma = 0 
+
+for i in range(1,101):
+	soma = soma + 1
+
+print("Somatório de 1 até 100 é", soma)
+----------------------------------------
+
+altura = int (input("Escreva a altura do retângulo:"))
+largura = int(input("Escreva a largura do retângulo:"))
+
+linha = ""
+
+for i in range(largura):
+	linha = linha + "#"
+
+retangulo = ""
+
+for i in range(altura):
+	retangulo = retangulo + "\n" + linha
+print(retangulo)
+----------------------------
+numero = int(input("Digite um número inteiro:"))
+
+contador = 0
+
+for i in range(1,numero+1):
+
+	if numero % i == 0:
+	contador = contador + 1
+	print(contador "-",i)
+
+if contador <= 2:
+	print(numero, "É primo")
+else:
+	print(numero, "Não é primo")
+-----------------------------------
+numero = int(input("Digite um número inteiro:"))
+
+ehPrimo = True
+
+for i in range(2,numero):
+
+	if numero % i == 0:
+	   ehPrimo = False
+
+if ehPrimo:
+	print("É primo")
+else:
+	print("Não é primo")
+-------------------------------
+
+
+aluno = ['Murilo', '19', 1.79] 
+
+print(type(aluno))
+print(aluno)
+---------------------------
+
+programadores = [Victor, 'Juliana', 'Samuel', 'Caio', 'Luana']
+print(type(programadores))
+print(len(programadores))
+print(programadores[4])
+
+nome = input("Digite um nome:")
+
+if nome in programadores
+	print(nome, "Está na lista")
+else:
+	print(nome,"Não está na lista")
+for programador in programadores
+
+	if nome == programador:
+	print(nome,"Está na lista")
+----------------------------------------
+for i in range(len(programadores)):
+
+	if nome == programadores[i]:
+	  print(nome,"Está na lista, na posição",i)
+
+.sort = ordem alfabética
+.count = contar quantas vezes há algo
+print("texto".count(t))
+------------------------------------
+lista = [20,35,67,10,-50]
+soma = 0
+
+for numero in lista:
+
+	soma = soma + numero 
+print(soma)
+----------------------------
+
+lista = [10,30,25,10,85]
+multiplicacao = 1
+
+for numero in lista:
+	multiplicacao = multiplicacao * numero
+
+print(multiplicacao)
+-----------------------------
+lista [10,30,25,10,85,0]
+
+print(max(lista))
+	------
+
+maior = lista[0]
+for numero in lista:
+
+	if numero > maior:
+	   maior = numero
+print(maior)
+
+	--------
+for in range (len(lista)):
+if i == 0:
+	maior = lista[i]
+else:
+	if lista[i] > maior:
+	maior = lista[i}
+	
+print(maior)
+--------------------------
+lista = [10,30,25,10,80]
+
+menor = lista[0]
+
+for numero in lista:
+	if numero < menor:
+	menor = numero
+print(menor)
+----------------------
+lista = ['abc', 'xyz', 'aba', '1221']
+contador = 0
+
+for termo in lista:
+	if len(termo) >= 2:
+	  if termo[0] == termo[len(termo)-1]: 
+	    contador +=1
+print(contador)
+----------------------
+vogais = ('a', 'e', 'i' , 'o', 'u')
+vogais[1] = 'E'
+--------------------------
+nome = input("Digite um nome: ")
+numeroLetras = len(nome) - nome.count(" ")
+
+print("Número de letras", len(nome))
+print("Primeira letra", nome[0])
+------------------------------------
+print(nome[::-1]
+-----------------------------
+palavra = "bom dia"
+inverso = ""
+
+print(palavra[::-1])
+
+for i in range (len(palavra)):
+	inverso += palavra [-(i+1)]
+	inverso += palavra[len(palavra)-1-i]
+print(inverso)
+----------------------------------------
+paises = ['Argentina', 'Brasil']
+print(len(paises))
+
+
+
+	
+
+
+
+
+
