@@ -505,6 +505,53 @@ print('gorjeta R$:',conta * 0.1)
 print('Total da conta com a gorjeta R$:',conta+conta * 0.1)
 
 
+def imprimirData(data):
 
+    listaData = data.split("/")
+
+    print(listaData)
+    
+    if len(listaData) != 3:
+        print("Você escreveu no formato errado.")
+    elif int(listaData[0])<=0 or int(listaData[0])>31:
+        print("Dia inserido inválido. Insira um dia entre 1 e 31.")
+    elif int(listaData[1])<=0 or int(listaData[1])>12:
+        print("Mês inserido inválido, insira um mês entre 1 e 12.")
+    elif not listaData[2].isnumeric():
+        print("O ano deve ser um número inteiro")
+    else:
+        match int(listaData[1]):
+            case 1:
+                mes = "Janeiro"
+            case 2: 
+                mes = "Fevereiro"
+            case 3:
+                mes = "Março"
+            case 4:
+                mes = "Abril"
+            case 5: 
+                mes = "Maio"
+            case 6:
+                mes = "Junho"
+            case 7:
+                mes = "Julho"
+            case 8:
+                mes = "Agosto"
+            case 9:
+                mes = "Setembro"
+            case 10:
+                mes = "Outubro"
+            case 11:
+                mes = "Novembro"
+            case 12:
+                mes = "Dezembro"
+
+        return f"{listaData[0]} de {mes} de {listaData[2]}"
+    return None
+
+
+diaMesAno = input("Digite a data no formato DD/MM/AAAA:")
+
+print(imprimirData(diaMesAno))
 
 
