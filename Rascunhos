@@ -489,6 +489,20 @@ for tupla in novaLista:
 	lista.append(tupla[::-1])
 
 print(lista)	
+---------------------------------------------
+
+dias_semana = ['segunda-feira', 'terça-feira', 'quarta-feira']
+i = 0
+while dias_semana:
+    if i == 1:
+        print("O dia da semana que corresponde a posição", i, "da lista dias_semana é:", dias_semana[i])
+        break
+    i += 1
+ -------------------------------------------------
+
+conta = float(input("Valor da conta R$: "))
+print('gorjeta R$:',conta * 0.1)
+print('Total da conta com a gorjeta R$:',conta+conta * 0.1)
 
 
 
