@@ -553,5 +553,29 @@ def imprimirData(data):
 diaMesAno = input("Digite a data no formato DD/MM/AAAA:")
 
 print(imprimirData(diaMesAno))
+-------------------------------------
+
+numero1 = 0
+numero2 = 0
+resultado = 0
+operacao = ''
+
+numero1 = int(input('Digite o primeiro número:'))
+operacao = input('Digite a operacao: ')
+numero2 = int(input('Digite o segundo número:'))
+
+while True:
+    if operacao == '+':
+        resultado = numero1 + numero2
+    elif operacao == '-':
+        resultado = numero1 - numero2
+    elif operacao == '/':
+        resultado = numero1 / numero2
+    elif operacao =='*':
+        resultado = numero1 * numero2
+    else:
+        resultado = 'Operação Inválida'
+        
+    print(str(numero1) + '' + str(operacao) + '' + str(numero2) + ' = ' + str(resultado))
 
 
