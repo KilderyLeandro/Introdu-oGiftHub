@@ -577,5 +577,42 @@ while True:
         resultado = 'Operação Inválida'
         
     print(str(numero1) + '' + str(operacao) + '' + str(numero2) + ' = ' + str(resultado))
+    -----------------------------------------------------------------------------------
+    
+    def soma(num1,num2):
+    return float(num1) + float(num2)
+    
+def subtracao(num1,num2):
+    return float(num1) - float(num2)
+
+def divisao(num1,num2):
+     return float(num1) / float(num2)
+
+def multiplicacao(num1,num2):
+    return float(num1) * float(num2)
+
+
+def Calculadora(num1,num2,op):
+
+       
+    
+    if op == '+':
+       return soma(num1, num2)
+    elif op == '-':
+        return subtracao(num1, num2)
+    elif op == '/':
+        return divisao(num1, num2)
+    elif op =='*':
+        return(multiplicacao)(num1, num2)
+    else:
+        resultado = 'Operação Inválida'
+
+    
+
+n1 = input("Digite o primeiro número:")
+operacao = input("Digite um operador:")
+n2 = input("Digite o segundo número:")
+
+print(str(n1) + '' + str(operacao) + '' + str(n2) + ' = ' + str(Calculadora(n1,n2,operacao)))
 
 
