@@ -747,6 +747,7 @@ main()
 #     for horario in horarios_disponiveis:
 #         print(f"- {horario}")
 
+----------------------------------------------
 # # Função para fazer o agendamento
 # def agendar(servico, horario):
 #     # Verificando se o serviço existe na lista de serviços
@@ -765,6 +766,7 @@ main()
 #     duracao = servicos[servico]
 #     print(f"Agendamento para {servico} às {horario} realizado. Duração: {duracao} minutos.")
 
+----------------------------------------------------------
 # # Pedindo ao usuário para escolher o serviço e o horário
 # servico = input("Digite o serviço desejado: ")
 # mostrar_horarios_disponiveis(servico)
@@ -778,14 +780,14 @@ main()
 # data_atual = datetime.date.today()
 # print("Hoje é:", data_atual)
 
-
+----------------------------------------------------------
 # import datetime
 
 # data_atual = datetime.date.today()
 # data_atual_reversa = data_atual.strftime('%Y-%m-%d')[::-1]
 
 # print("Data atual em ordem reversa:", data_atual_reversa)
-
+-----------------------------------------------------------
 
 # import random
 
@@ -806,6 +808,7 @@ main()
 #     resultado = resultados[i-1]
 #     print(f"{num} x {i} = {resultado:.2f}")
 
+-----------------------------------------------------
 # import random
 
 # num = int(input("Digite um número inteiro: "))
@@ -835,6 +838,7 @@ main()
 #     print(f"{num} x {i} = {multiplicacao}")
 #     print(f"{num} / {i} = {divisao:.2f}")
 
+------------------------------------------------------------------
 # import random
 
 # num = int(input("Digite um número inteiro: "))
@@ -868,7 +872,7 @@ main()
 
 # for i in range(1, altura + 1):
 #     print("*" * i)
-
+---------------------------------------------------------
 # import random
 
 # numero_secreto = random.randint(1, 100)
