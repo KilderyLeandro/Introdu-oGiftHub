@@ -1,0 +1,128 @@
+# Problema: Crie uma classe "Pessoa" que represente uma pessoa, com os atributos "nome" e "idade".
+# Classe a ser criada: Pessoa
+# Métodos a serem criados: construtor (init) que recebe nome e idade como parâmetros e atribui aos atributos da classe;
+# método "getNome" que retorna o nome da pessoa; método "getIdade" que retorna a idade da pessoa.
+# Instruções: Crie um objeto da classe "Pessoa" com nome "João" e idade "25". 
+# Imprima o nome e idade da pessoa usando os métodos criados.
+
+'''
+class Pessoa:
+    def __init__(self,nome,idade):
+        self.nome = nome
+        self.idade = idade
+    
+    def getNome(self):
+        return self.nome
+    
+    def getIdade(self):
+        return self.idade
+    
+    
+
+pessoa  = Pessoa("João",25)
+print("Nome = ",pessoa.getNome())
+print("Idade = ",pessoa.getIdade())
+
+
+
+
+
+#-------------------------------------------------------------------------------------
+# Problema: Crie uma classe "Círculo" que represente um círculo, com o atributo "raio".
+# Classe a ser criada: Círculo
+# Métodos a serem criados: construtor (init) que recebe o raio como parâmetro e atribui ao atributo da classe; 
+# método "calcularArea" que retorna a área do círculo; método "calcularCircunferencia" 
+# que retorna a circunferência do círculo.
+# Instruções: Crie um objeto da classe "Círculo" com raio igual a 5. Calcule e imprima a 
+# área e circunferência do círculo usando os métodos criados.
+
+class Circulo:
+    def __init__(self, raio):
+        self.raio=raio
+
+    def calcularArea(self):
+        area = 3.14 * (self.raio) ** 2
+        return area
+    
+    def calcularCircuferencia(self):
+        circuferencia = 2 * 3.14 * (self.raio)
+        return circuferencia
+    
+circulo = Circulo(5)
+
+print("Area = ", circulo.calcularArea())
+print("Circuferencia = ", circulo.calcularCircuferencia())
+
+'''
+
+
+
+        
+
+
+
+#------------------------------------------------------------------------------------------
+# Problema: Crie uma classe "ContaBancaria" que represente uma conta bancária, com os atributos "saldo" e "titular".
+# Classe a ser criada: ContaBancaria
+# Métodos a serem criados: construtor (init) que recebe o titular como parâmetro e atribui ao atributo da classe, 
+# inicializando o saldo com zero; método "depositar" que recebe um valor como parâmetro e adiciona ao saldo da conta;
+# método "sacar" que recebe um valor como parâmetro e subtrai do saldo da conta, se o saldo for suficiente;
+# método "consultarSaldo" que retorna o saldo da conta.
+# Instruções: Crie um objeto da classe "ContaBancaria" com titular "Maria". Deposite 100 reais na conta e depois
+# faça um saque de 50 reais. Imprima o saldo da conta usando o método "consultarSaldo".
+
+
+class ContaBancaria:
+    def __init__(self,saldo,titular):
+        self.saldo = saldo
+        self.titular = titular
+    
+    def depositar(self,valor):
+        self.saldo = valor + self.saldo
+        return self.saldo
+     
+    def sacar(self, valor):
+        self.saldo = self.saldo - valor
+        return self.saldo
+    def consultarSaldo(self):
+        return self.saldo
+        
+cliente = ContaBancaria(0, "Maria"  )     
+print("Deposito", cliente.depositar(100) )
+print("Saque", cliente.sacar(50))   
+print("Total = ",cliente.consultarSaldo())
+
+#----------------------------------------------------------------------------------------------
+# Problema: Crie uma classe "Livro" que represente um livro, com os atributos "titulo", "autor" e "ano".
+# Classe a ser criada: Livro
+# Métodos a serem criados: construtor (init) que recebe o título, autor e ano como parâmetros e atribui aos atributos da classe; método "getTitulo" 
+# que retorna o título do livro; método "getAutor" que retorna o autor do livro; método "getAno" que retorna o ano do livro.
+# Instruções: Crie um objeto da classe "Livro" com título "O Senhor dos Anéis", autor "J.R.R. Tolkien" e ano "1954". Imprima o título, autor e ano do livro usando os métodos criados.
+
+class Livro:
+    def __init__(self,titulo,autor,ano):
+        self.titulo = titulo
+        self.autor = autor
+        self.ano = ano
+
+    def getAutor(self):
+        return self.autor
+    
+    def getAno(self):
+        return self.ano
+    
+livro = Livro("Senhor dos Anéis", "J.R.R Tolkien", 1954)
+print(livro.titulo)
+print("Autor =",livro.getAutor())
+print("Ano =",livro.getAno())
+
+# Problema: Crie uma classe "Aluno" que represente um aluno, com os atributos "nome", "matrícula" e "notas".
+# Classe a ser criada: Aluno
+# Métodos a serem criados: construtor (init) que recebe o nome e a matrícula como parâmetros e atribui
+# aos atributos da classe, inicializando a lista de notas com uma lista vazia; método "adicionarNota" que recebe uma nota como parâmetro e 
+# adiciona à lista de notas do aluno; método "calcularMedia" que calcula a média das notas do aluno e retorna o resultado.
+# Instruções: Crie um objeto da classe "Aluno" com nome "Ana" e matrícula "12345". 
+# Adicione notas 7, 8 e 9 ao objeto criado usando o método "adicionarNota". Calcule e imprima a média das notas do aluno usando o método "calcularMedia".
+
+
+
