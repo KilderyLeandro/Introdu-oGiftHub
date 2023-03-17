@@ -897,4 +897,30 @@ main()
 # if tentativas == 5:
 #     print("Suas tentativas acabaram. O número secreto era", numero_secreto)
 
+------------------------------------------------------------------------------------
+
+class Triangulo:
+    def __init__(self, ladoA, ladoB, ladoC):
+        self.ladoA = ladoA
+        self.ladoB = ladoB
+        self.ladoC = ladoC
+    
+    def calcular_perimetro(self):
+        return self.ladoA + self.ladoB + self.ladoC
+    
+    def get_maior_lado(self):
+        return max(self.ladoA, self.ladoB, self.ladoC)
+    
+    # pede ao usuário as medidas do triângulo
+ladoA = float(input("Digite o comprimento do lado A: "))
+ladoB = float(input("Digite o comprimento do lado B: "))
+ladoC = float(input("Digite o comprimento do lado C: "))
+
+# cria o objeto Triangulo com as medidas informadas
+triangulo = Triangulo(ladoA, ladoB, ladoC)
+
+# imprime o perímetro e o maior lado do triângulo
+print("Perímetro:", triangulo.calcular_perimetro())
+print("Maior lado:", triangulo.get_maior_lado())
+
 
