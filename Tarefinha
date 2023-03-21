@@ -5,27 +5,39 @@
 
 class Animal:
     def __init__(self, nome, idade):
-        self.nome=nome
-        self.idade=idade
+        self.nome = nome
+        self.idade = idade
     
     def emitir_som(self):
         pass
 
 
+class Cachorro(Animal):
+    def emitir_som(self):
+        return "au au"
 
 
-    
-class Cachorro:
-
-    pass
-
-class Gato:
-    pass
-
-class Pato:
-    pass
+class Gato(Animal):
+    def emitir_som(self):
+        return "miau"
 
 
+class Pato(Animal):
+    def emitir_som(self):
+        return "quack"
+
+
+# Exemplo de uso das classes
+animal1 = Cachorro("Rex", 3)
+animal2 = Gato("Mimi", 2)
+animal3 = Pato("Donald", 1)
+
+print(animal1.emitir_som())  # deve imprimir "au au"
+print(animal2.emitir_som())  # deve imprimir "miau"
+print(animal3.emitir_som())  # deve imprimir "quack"
+
+
+#-----------------------------------------------------------------------------------------
 # 2. Crie uma classe Veiculo que tenha os atributos modelo, cor e ano e o método ligar(). 
 # Crie também as classes Carro, Moto e Bicicleta que herdem da classe Veiculo e sobrescrevam
 #  o método ligar() para imprimir “O carro está ligado”, “A moto está ligada” e “A bicicleta está pronta” respectivamente.
@@ -33,25 +45,43 @@ class Pato:
 
 class Veiculo:
     def __init__(self, modelo, cor, ano):
-        self.modelo = modelo 
+        self.modelo = modelo
         self.cor = cor
         self.ano = ano
-
-    def ligar():
+    
+    def ligar(self):
         pass
-class Carro:
-    pass
 
-class Moto:
-    pass
 
-class Bicicleta:
-    pass
+class Carro(Veiculo):
+    def ligar(self):
+        print("O carro está ligado")
+
+
+class Moto(Veiculo):
+    def ligar(self):
+        print("A moto está ligada")
+
+
+class Bicicleta(Veiculo):
+    def ligar(self):
+        print("A bicicleta está pronta")
+
+
+# Exemplo de uso das classes
+veiculo1 = Carro("Gol", "Preto", 2010)
+veiculo2 = Moto("Honda", "Vermelho", 2020)
+veiculo3 = Bicicleta("Caloi", "Azul", 2022)
+
+veiculo1.ligar()  # deve imprimir "O carro está ligado"
+veiculo2.ligar()  # deve imprimir "A moto está ligada"
+veiculo3.ligar()  # deve imprimir "A bicicleta está pronta"
+
 
         
 
 
-
+#---------------------------------------------------------------------------
 # 3. Crie uma classe ContaBancaria que tenha os atributos privados numero, 
 # titular e saldo e os métodos públicos depositar(), sacar() e consultar_saldo(). 
 # O método depositar() deve receber como parâmetro a quantia a ser depositada e adicionar ao saldo. 
@@ -59,22 +89,39 @@ class Bicicleta:
 # O método consultar_saldo() deve retornar o valor do saldo. Crie um objeto dessa classe e teste os métodos.
 
 class ContaBancaria:
-    def __init__(self, numero, titular, saldo):
-        self.numero = numero
-        self.titular = titular 
-        self.saldo = saldo
+    def __init__(self, numero, titular, saldo=0):
+        self.__numero = numero
+        self.__titular = titular
+        self.__saldo = saldo
+    
+    def depositar(self, valor):
+        self.__saldo += valor
+    
+    def sacar(self, valor):
+        if valor <= self.__saldo:
+            self.__saldo -= valor
+        else:
+            print("Saldo insuficiente!")
+    
+    def consultar_saldo(self):
+        return self.__saldo
 
-    def depositar(self):
-        saldo= 0
-        dep = input("Insira um valor")
-        
 
-    def sacar():
-        pass
-    def consultar_saldo():
-        pass
+# Exemplo de uso da classe
+conta = ContaBancaria("12345-6", "Fulano")
+
+print(conta.consultar_saldo())  # deve imprimir 0
+
+conta.depositar(1000)
+print(conta.consultar_saldo())  # deve imprimir 1000
+
+conta.sacar(500)
+print(conta.consultar_saldo())  # deve imprimir 500
+
+conta.sacar(1000)  # deve imprimir "Saldo insuficiente!"
 
 
+#---------------------------------------------------------------------------------------------------------
 # 4. Crie uma classe Funcionario que tenha os atributos nome, salario e cargo e o método calcular_bonus().
 #  Crie também as classes Gerente, Vendedor e Estagiario que herdem da classe Funcionario e sobrescrevam o
 #  método calcular_bonus() para retornar 20%, 10% e 5% do salário respectivamente. Crie alguns objetos dessas classes e
@@ -83,15 +130,33 @@ class ContaBancaria:
 class Funcionario:
     def __init__(self, nome, salario, cargo):
         self.nome = nome
-        self.salario = salario 
+        self.salario = salario
         self.cargo = cargo
+    
+    def calcular_bonus(self):
+        return 0
 
-    def calcular_bonus():
-        pass
 
-class Gerente:
-    pass
-class Vendedor:
-    pass
-class Estagiario:
-    pass
+class Gerente(Funcionario):
+    def calcular_bonus(self):
+        return 0.2 * self.salario
+
+
+class Vendedor(Funcionario):
+    def calcular_bonus(self):
+        return 0.1 * self.salario
+
+
+class Estagiario(Funcionario):
+    def calcular_bonus(self):
+        return 0.05 * self.salario
+
+
+# Exemplo de uso das classes
+gerente = Gerente("João", 5000, "Gerente de Vendas")
+vendedor = Vendedor("Maria", 3000, "Vendedor Interno")
+estagiario = Estagiario("Pedro", 1000, "Estagiário de Marketing")
+
+print(gerente.calcular_bonus())  # deve imprimir 1000.0
+print(vendedor.calcular_bonus())  # deve imprimir 300.0
+print(estagiario.calcular_bonus())  # deve imprimir 50.0
