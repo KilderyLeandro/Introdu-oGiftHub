@@ -1,21 +1,91 @@
-MIT License
+class Pokemon:
+    def __init__(self, name, level, type):
+        self.name = name
+        self.level = level
+        self.type = type
+        self.max_health = level * 5
+        self.current_health = self.max_health
 
-Copyright (c) 2023 KilderyLeandro
+    def __repr__(self):
+        return f'{self.name} ({self.type}, Lvl {self.level}, HP {self.current_health}/{self.max_health})'
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+    def move(self):
+        print(f'{self.name} used a move!')
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+    def take_damage(self, damage):
+        self.current_health -= damage
+        if self.current_health < 0:
+            self.current_health = 0
+        print(f'{self.name} took {damage} damage.')
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+
+
+    def heal(self, amount):
+        self.current_health += amount
+        if self.current_health > self.max_health:
+            self.current_health = self.max_health
+        print(f'{self.name} healed {amount} HP.')
+
+
+
+class FirePokemon(Pokemon):
+    def __init__(self, name, level):
+        super().__init__(name, level, "Fire")
+    
+    def move(self):
+        print(f'{self.name} used Ember!')
+
+    def take_damage(self, damage):
+        if self.type == "Water":
+            damage *= 2
+        elif self.type == "Grass":
+            damage /= 2
+        super().take_damage(damage)
+
+class WaterPokemon(Pokemon):
+    def __init__(self, name, level):
+        super().__init__(name, level, "Water")
+
+    def move(self):
+        print(f'{self.name} used Bubblebeam!')
+
+    def take_damage(self, damage):
+        if self.type == "Grass":
+            damage *= 2
+        elif self.type == "Fire":
+            damage /= 2
+        super().take_damage(damage)
+
+class GrassPokemon(Pokemon):
+    def __init__(self, name, level):
+        super().__init__(name, level, "Grass")
+
+    def move(self):
+        print(f'{self.name} used Vine Whip!')
+
+    def take_damage(self, damage):
+        if self.type == "Fire":
+            damage *= 2
+        elif self.type == "Water":
+            damage /= 2
+        super().take_damage(damage)
+
+
+
+charmander = FirePokemon("Charmander", 5)
+squirtle = WaterPokemon("Squirtle", 5)
+bulbasaur = GrassPokemon("Bulbasaur", 5)
+
+print(charmander)
+print(squirtle)
+print(bulbasaur)
+
+charmander.move()
+squirtle.move()
+bulbasaur.move()
+
+squirtle.take_damage(10)
+bulbasaur.take_damage(10)
+charmander.take_damage(10)
+
+
