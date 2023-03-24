@@ -1,0 +1,237 @@
+Crie um programa Python que use POO para modelar um sistema
+complexo. O programa deve incluir pelo menos duas classes que se
+relacionam entre si.
+--------------------------------------------------------------
+
+
+class Produto:
+    def __init__(self, nome, preco, quantidade):
+        self.nome = nome
+        self.preco = preco
+        self.quantidade = quantidade
+
+    def adicionar_estoque(self, quantidade):
+        self.quantidade += quantidade
+
+    def remover_estoque(self, quantidade):
+        if quantidade > self.quantidade:
+            print(f"Erro: não há {quantidade} unidades de {self.nome} em estoque")
+        else:
+            self.quantidade -= quantidade
+
+
+class Estoque:
+    def __init__(self):
+        self.produtos = []
+
+    def adicionar_produto(self, produto):
+        self.produtos.append(produto)
+
+    def remover_produto(self, produto):
+        self.produtos.remove(produto)
+
+    def listar_produtos(self):
+        for produto in self.produtos:
+            print(f"{produto.nome} - R$ {produto.preco} - {produto.quantidade} unidades")
+
+    def buscar_produto(self, nome):
+        for produto in self.produtos:
+            if produto.nome == nome:
+                return produto
+        print(f"Erro: {nome} não encontrado no estoque")
+
+
+# Exemplo de uso:
+estoque = Estoque()
+
+p1 = Produto("Camisa", 49.99, 10)
+p2 = Produto("Calça", 79.99, 5)
+p3 = Produto("Tênis", 129.99, 2)
+
+estoque.adicionar_produto(p1)
+estoque.adicionar_produto(p2)
+estoque.adicionar_produto(p3)
+
+estoque.listar_produtos()
+
+estoque.remover_produto(p2)
+
+estoque.listar_produtos()
+
+p1.adicionar_estoque(5)
+p3.remover_estoque(1)
+
+estoque.listar_produtos()
+
+p4 = estoque.buscar_produto("Camisa")
+print(p4.preco)
+
+
+------------------------------------------------------------
+Crie uma classe que represente um carro. O carro deve ter
+atributos como modelo, ano e cor. Ele deve ter métodos para
+acelerar, frear e virar.
+-----------------------------------------------------------
+
+class Carro:
+    def __init__(self, modelo, ano, cor):
+        self.modelo = modelo
+        self.ano = ano
+        self.cor = cor
+        self.velocidade = 0
+        self.direcao = 'frente'
+
+    def acelerar(self, quantidade):
+        self.velocidade += quantidade
+        print(f"O carro acelerou para {self.velocidade} km/h")
+
+    def frear(self, quantidade):
+        if quantidade > self.velocidade:
+            print("Erro: o carro já está parado")
+        else:
+            self.velocidade -= quantidade
+            print(f"O carro reduziu para {self.velocidade} km/h")
+
+    def virar(self, direcao):
+        self.direcao = direcao
+        print(f"O carro virou para {direcao}")
+        
+        
+meu_carro = Carro("Ford Mustang", 2022, "vermelho")
+print(meu_carro.modelo)
+print(meu_carro.ano)
+print(meu_carro.cor)
+
+meu_carro.acelerar(50)
+meu_carro.frear(20)
+meu_carro.virar("direita")
+
+---------------------------------------------------------------
+b) Crie uma classe que represente uma conta bancária. A conta
+deve ter atributos como número da conta e saldo. Ela deve ter
+métodos para depositar dinheiro, retirar dinheiro e verificar o
+saldo.
+--------------------------------------------------------------
+
+
+class ContaBancaria:
+    def __init__(self, numero_conta):
+        self.numero_conta = numero_conta
+        self.saldo = 0
+
+    def depositar(self, valor):
+        self.saldo += valor
+        print(f"Depósito de R${valor:.2f} realizado com sucesso. Novo saldo: R${self.saldo:.2f}")
+
+    def retirar(self, valor):
+        if self.saldo < valor:
+            print("Erro: saldo insuficiente")
+        else:
+            self.saldo -= valor
+            print(f"Saque de R${valor:.2f} realizado com sucesso. Novo saldo: R${self.saldo:.2f}")
+
+    def verificar_saldo(self):
+        print(f"Saldo atual: R${self.saldo:.2f}")
+
+minha_conta = ContaBancaria("12345")
+minha_conta.depositar(1000)
+minha_conta.retirar(500)
+minha_conta.verificar_saldo()
+
+------------------------------------------------------------------
+Crie uma classe que represente uma loja online. A loja deve ter
+atributos como nome e endereço. Ela deve ter métodos para
+adicionar produtos ao estoque, remover produtos do estoque e
+verificar o estoque disponível
+-----------------------------------------------------------------
+
+
+class LojaOnline:
+    def __init__(self, nome, endereco):
+        self.nome = nome
+        self.endereco = endereco
+        self.estoque = {}
+
+    def adicionar_produto(self, produto, quantidade):
+        if produto in self.estoque:
+            self.estoque[produto] += quantidade
+        else:
+            self.estoque[produto] = quantidade
+        print(f"{quantidade} unidades de {produto} adicionadas ao estoque")
+
+    def remover_produto(self, produto, quantidade):
+        if produto not in self.estoque:
+            print(f"{produto} não encontrado no estoque")
+        elif quantidade > self.estoque[produto]:
+            print(f"Erro: quantidade solicitada maior do que a disponível em estoque")
+        else:
+            self.estoque[produto] -= quantidade
+            print(f"{quantidade} unidades de {produto} removidas do estoque")
+
+    def verificar_estoque(self):
+        print(f"Estoque disponível:")
+        for produto, quantidade in self.estoque.items():
+            print(f"{produto}: {quantidade} unidades")
+
+minha_loja = LojaOnline("Minha Loja", "Rua Principal, 123")
+minha_loja.adicionar_produto("Camiseta", 50)
+minha_loja.adicionar_produto("Calça", 30)
+minha_loja.remover_produto("Camiseta", 20)
+minha_loja.verificar_estoque()
+
+-----------------------------------------------------------------
+d) Crie uma classe que represente um jogo de cartas. O jogo deve
+ter atributos como número de jogadores e baralho. Ele deve ter
+métodos para distribuir cartas, jogar uma carta e verificar o
+vencedor.
+---------------------------------------------------------------
+
+
+import random
+
+class JogoDeCartas:
+    def __init__(self, baralho, num_jogadores):
+        self.baralho = baralho
+        self.num_jogadores = num_jogadores
+        self.jogadores = [[] for _ in range(num_jogadores)]
+        self.cartas_jogadas = []
+        self.vencedor = None
+
+    def distribuir_cartas(self):
+        cartas = self.baralho.embaralhar()
+        for i, carta in enumerate(cartas):
+            jogador = i % self.num_jogadores
+            self.jogadores[jogador].append(carta)
+
+    def jogar_carta(self, jogador, carta):
+        if self.vencedor is not None:
+            print("O jogo já terminou.")
+            return
+        if carta not in self.jogadores[jogador]:
+            print("Carta inválida.")
+            return
+        self.jogadores[jogador].remove(carta)
+        self.cartas_jogadas.append((jogador, carta))
+        if len(self.cartas_jogadas) == self.num_jogadores:
+            self.vencedor = self.verificar_vencedor()
+
+    def verificar_vencedor(self):
+        valores = [carta[1] for carta in self.cartas_jogadas]
+        maior_valor = max(valores)
+        vencedor = valores.index(maior_valor)
+        return vencedor
+
+    def mostrar_cartas(self):
+        for i in range(self.num_jogadores):
+            print(f"Jogador {i+1}: {self.jogadores[i]}")
+
+    def mostrar_cartas_jogadas(self):
+        print("Cartas jogadas:")
+        for jogada in self.cartas_jogadas:
+            print(f"Jogador {jogada[0]+1]} jogou {jogada[1]}")
+
+    def mostrar_vencedor(self):
+        if self.vencedor is not None:
+            print(f"Jogador {self.vencedor+1]} ganhou o jogo!")
+        else:
+            print("O jogo ainda não terminou.")
