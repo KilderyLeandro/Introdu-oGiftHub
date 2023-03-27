@@ -1,0 +1,92 @@
+
+class Pokemon:
+    def __init__(self, nome, level, tipo):
+        self.nome = nome
+        self.level = level
+        self.tipo = tipo
+        self.max_vida = level * 5
+        self.vida_atual = self.max_vida
+
+    def __repr__(self):
+        return f'{self.nome} ({self.tipo}, Lvl {self.level}, HP {self.vida_atual}/{self.max_vida})'
+
+    def movimento(self):
+        print(f'{self.nome} usou um movimento!')
+
+    def dano_recebido(self, dano):
+        self.vida_atual -= dano
+        if self.vida_atual < 0:
+            self.vida_atual = 0
+        print(f'{self.nome} levou {dano} de dano!.')
+
+
+
+    def heal(self, quantidade):
+        self.vida_atual += quantidade
+        if self.vida_atual > self.max_vida:
+            self.vida_atual = self.max_vida
+        print(f'{self.nome} curou {quantidade} HP!.')
+
+
+
+class PokemonFogo(Pokemon):
+    def __init__(self, nome, level):
+        super().__init__(nome, level, "Fogo")
+    
+    def movimento(self):
+        print(f'{self.nome} usou Lança Chamas!')
+
+    def dano_recebido(self, dano):
+        if self.tipo == "Agua":
+            dano *= 2
+        elif self.tipo == "Grama":
+            dano /= 2
+        super().dano_recebido(dano)
+
+class PokemonAgua(Pokemon):
+    def __init__(self, nome, level):
+        super().__init__(nome, level, "Agua")
+
+    def movimento(self):
+        print(f'{self.nome} usou Jato de Água!')
+
+    def dano_recebido(self, dano):
+        if self.tipo == "Grama":
+            dano *= 2
+        elif self.tipo == "Fogo":
+            dano /= 2
+        super().dano_recebido(dano)
+
+class PokemonGrama(Pokemon):
+    def __init__(self, nome, level):
+        super().__init__(nome, level, "Grama")
+
+    def movimento(self):
+        print(f'{self.nome} usou Chicote de Cipó!')
+
+    def dano_recebido(self, dano):
+        if self.tipo == "Fogo":
+            dano *= 2
+        elif self.tipo == "Agua":
+            dano /= 2
+        super().dano_recebido(dano)
+
+
+
+charmander = PokemonFogo("Charmander", 5)
+squirtle = PokemonAgua("Squirtle", 5)
+bulbasaur = PokemonGrama("Bulbasaur", 5)
+
+
+
+print(charmander)
+print(squirtle)
+print(bulbasaur)
+
+charmander.movimento()
+squirtle.movimento()
+bulbasaur.movimento()
+
+squirtle.dano_recebido(10)
+bulbasaur.dano_recebido(10)
+charmander.dano_recebido(10)
