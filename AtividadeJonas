@@ -1,0 +1,82 @@
+Congruência de Figuras Geométricas
+Congruência de figuras geométricas: casos em que figuras distintas
+possuem medidas iguais, mas não são iguais entre si.
+
+Figuras congruentes são aquelas que possuem lados e ângulos
+correspondetes com medidas iguais. As medidas são iguais, mas os lados e ângulos não são.
+É como comparar paredes e ângulos de duas casas distintas. 
+As medidas podem ser iguais, mas isso não quer dizer que as paredes da primeira casa
+sejam iguais as paredes da segunda. Imagine que a primeira casa é verde e a segunda é branca!
+
+Do mesmo modo, não é possível afirmar que duas figuras congruentes são iguais. A igualdade entre elas é 
+apenas entre as medidas de seus lados e de seus ângulos. Por isso, dizer que duas figuras são iguais significa dizer
+que a primeira figura é exatamente igual à segunda figura.
+
+Afirmar que duas figuras são congruentes é equivalente a dizer que a primeira figura possui medidas de ângulo e lados 
+correspondentes de igual valor. 
+
+As duas figuras acima são congruentes por serem polígonos regulares de lado 1 cm e por possuírem todos os ângulos
+iguais a 120 graus, entretanto, a imagem seguinte torna a correspondência entre lados e ângulos mais óbvia.
+
+
+Imagine que o pentágono da direita é uma versão do pentágono da esquerda de cabeça para baixo. Observe que:
+
+
+1 O lado AB é correspondente ao lado FG e que AB = FG = 2cm.
+2 O lado BC é correspondente ap lado GH e BC = GH = 1,41.
+
+3 seguindo esse raciocínio, podemos escrever outros pares de lados congruentes: CD = IH, DE = IJ e EA = JF.
+Com relação aos ângulos, observe que os ângulos correspondentes seguem o mesmo padrão dos lados. Por exemplo, 
+o ângulo "a", localizado no vértice A, é de 135 graus e é correspondente ao ângulo "f", localizado no vértice F.
+Representando os ângulos pelos vértices correspondentes em letras minúsculas, teremos as correspondências:
+a = f, b = g, c = h, d = i. e = j.
+Existem figuras congruentes cujas medidas correspondentes não são tão óbvias. Repare na figura a seguir:
+
+
+
+
+Observe que os ângulos correspondentes agora ocupam posições não tão óbvias quanto anteriormente. 
+Observe as relações de congruência: a = i, d = j, c = k, e b = l
+As relações de congruência entre os lados agora são as seguintes AB = IL, BC = LK, CD = KJ, DA = IJ.
+
+Portanto, duas figuras geométricas são congruentes quando as medidas de seus lados correspondentes são congruentes e,
+além disso, quando as medidas dos ângulos correspondentes são congruentes.
+--------------------------------------------------------------------------------------------------------------------------
+
+
+Questão 1: 
+A figura abaixo nos mostra duas avenidas que partem de um mesmo ponto A e cortam duas ruas paralelas. Na primeira avenida, 
+os quarteirões determinados pels ruas paralelas têm 80m e 90m de comprimento, respectivamente. Na segunda avenida, um dos quarteirões
+determinados mede 60m. Qual o comprimento do outro quarteirão?
+
+
+
+
+
+Questão 2:
+A figura ao lado indica três lotes de terreno com frente para a rua A e para rua B, as divisas dos lotes são perpendiculares à rua A. 
+As frentes dos lotes 1, 2 e 3 para a rua A, medem, respectivamente, 15m, 20m e 25m. A frente do lote 2 para a rua B mede 28M. 
+Qual é a medida da frente para a rua B dos lotes 1 e 3?
+
+
+Questão 3:
+No desenho abaixo estão representados os terrenos I, II, e III.
+Quantos metros de comprimento deverá ter o muro que o proprietário do terreno II construirá para fechar o lado que faz frente com a Rua das Rosas
+
+
+Questão 4:
+Três terrenos têm frente para a rua A e para rua B, como na figura. As divisas laterais são perpendiculares à rua A. Qual a medida de frente para a rua B de cada lote, sabendo que 
+a frente total para essa rua tem 180M.
+
+
+Questão 5:
+Numa cidade do interior, à noite, surgiu um objeto voador não identificado, em forma de disco, que estacionou a 50M do solo, aproximadamente 30M acima do objeto, iluminou-o com um holofote, 
+conforme mostra a figura anterior. Sendo assim, pode-se afirmar que o raio do disco mede, em M(metros), aproximadamente?
+
+
+Questão 6: 
+O ponto mais alto de uma rampa, em relação ao solo, fica a 6M. Ela é sustentada por 6 pilares distantes um do outro 5M e distribuidos conforme a figura. Desprezando-se a largura do pilares, 
+qual é a altura do terceiro pilar?
+
+Questão 7: 
+Duas figuras semelhantes apresentam as seguintes medidas entre lados correspondente: 6CM e 8Cm. Sabendo que a área da figura menor é 54CM
