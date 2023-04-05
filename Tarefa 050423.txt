@@ -1,0 +1,37 @@
+Cadastro de Produtos(Papelaria).
+
+Empresa: Grupo Borges LTDA. 
+Nome fantasia: Atacados Produtos
+Número(tel): +55 00 0000-0000 
+CNPJ: 0001.0002.003/0004 
+E-mail: empre_borg@ficticio.com
+CEP: 000000-00
+
+
+Entidade: Produtos do Estoque
+
+
+Atributos:      
+
+id_produto(PK):  1001  | id_produto(PK): 1002          |
+		       |                               |
+Nome: Caderno	       | Nome:		               |
+Qtd_prod_estoq: 180    | Qtd_prod_estoq: 75            |
+Qtd_pag: 200	       | Qtd_pag: 400		       |
+Qtd_materias: 10       | Qtd_materias: 20	       |
+Fornecedor: Jotujé     | Fornecedor: Jotujé	       |
+Fabricante:Tilibra     | Fabricante: Tilibra	       | 
+Peso: 0,5kg	       | Peso: 1,0K                    |
+-------------------------------------------------------|
+id_produto(PK): 2001   | id_produto(PK): 2002          |
+		       |                               |
+Nome: Caneta           | Nome: Caneta                  |
+Qtd_prod_estoq: 326    | Qtd_prod_estoq: 251           |
+Qtd_na_caixa: 50       | Qtd_na_caixa: 326             |
+Cor: Azul              | Cor: Vermelha                 |
+Fabricante: Bic        | Fabricante: Bic               |
+Peso: 255g             | Peso: 255g                    | 
+-------------------------------------------------------|
+
+
+
