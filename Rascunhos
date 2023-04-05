@@ -924,3 +924,4 @@ print("Perímetro:", triangulo.calcular_perimetro())
 print("Maior lado:", triangulo.get_maior_lado())
 
 
+https://app.diagrams.net
