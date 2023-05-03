@@ -1,0 +1,206 @@
+Banco de Dados Farmácia:						
+
+Incrementos do código:
+
+Adicionar Medicamento(Provavelmente será adicionado um método para inserção de dosagem em miligrama)
+Remover Medicamentos
+Consultar Medicamentos e sua quantidade/validade (provavelmente será adicionado um método para selecionar uma determinada miligrama)
+Cadastrar Cliente
+Consultar Cliente (precisa reconhcer a diferença entre maiúsculo e minúsculo)
+
+Relizar a venda do remédio
+
+
+
+Possíveis Cardinalidades:1 n n
+
+Cliente			Venda			Produto
+
+id_Cliente(pk)		id_venda		id_prod		
+Nome_cliente		nome_med(fk)		Nome_prod
+Endereço		qtd_med			qtd_stoq
+Telefone		pagamento(valor)		validade_prod
+
+
+
+
+
+
+
+
+
+Este é um programa em Python que faz a gestão de medicamentos e clientes de uma farmácia utilizando um banco de dados PostgreSQL.
+
+Ele utiliza a biblioteca psycopg2 para se conectar ao banco de dados e executar comandos SQL. As principais funcionalidades são:
+
+Adicionar Medicamento: adiciona um novo medicamento com o nome, quantidade e data de validade informados pelo usuário.
+
+Remover Medicamento: remove um medicamento com base no nome informado pelo usuário.
+
+Mostrar todos os medicamentos: lista todos os medicamentos cadastrados no banco de dados.
+
+Consultar Medicamento: consulta um medicamento com base no nome informado pelo usuário e exibe suas informações.
+
+Cadastrar Cliente: cadastra um novo cliente com o nome, idade e endereço informados pelo usuário.
+
+Consultar Cliente: consulta um cliente com base no nome informado pelo usuário e exibe suas informações.
+
+Mostrar todos os clientes: lista todos os clientes cadastrados no banco de dados.
+
+O programa possui um loop while que exibe um menu de opções para o usuário escolher a funcionalidade desejada. Cada opção chama uma função correspondente que realiza as operações no banco de dados.
+
+É importante destacar que o programa utiliza consultas SQL diretamente com as informações fornecidas pelo usuário, o que pode apresentar vulnerabilidades de segurança como SQL injection. É recomendado validar e sanitizar as entradas do usuário antes de utilizar em comandos SQL.
+
+
+
+
+import psycopg2
+
+conn = psycopg2.connect(
+    host="localhost",
+    database="Farmacia",
+    user="postgres",
+    password="postgre"
+)
+
+cur = conn.cursor()
+
+def add_medicamento(nome, quantidade, validade):
+    cur.execute(f"INSERT INTO Medicamentos VALUES ('{nome}', {quantidade}, '{validade.strftime('%d/%m/%Y')}');")
+    conn.commit()
+
+def remove_medicamento(nome):
+    cur.execute(f"DELETE FROM Medicamentos WHERE nome = '{nome}';")
+    conn.commit()
+
+def mostrar_medicamentos():
+    cur.execute("SELECT * FROM Medicamentos")
+    results = cur.fetchall()
+    for result in results:
+        print(f"Nome: {result[0]}, Quantidade: {result[1]}, Validade: {result[2].strftime('%d/%m/%Y')}")
+
+def cadastrar_cliente(nome, idade, endereco):
+    cur.execute(f"INSERT INTO Clientes VALUES ('{nome}', {idade}, '{endereco}');")
+    conn.commit()
+
+def consulta_cliente(nome):
+    cur.execute(f"SELECT * FROM Clientes WHERE nome = '{nome}';")
+    result = cur.fetchone()
+    if result:
+        return f"Nome: {result[0]}, Idade: {result[1]}, Endereço: {result[2]}"
+    else:
+        return "Cliente não encontrado."
+
+def mostrar_clientes():
+    cur.execute("SELECT * FROM Clientes")
+    results = cur.fetchall()
+    for result in results:
+        print(f"Nome: {result[0]}, Idade: {result[1]}, Endereço: {result[2]}")
+
+while True:
+    print("1 - Adicionar Medicamento")
+    print("2 - Remover Medicamento")
+    print("3 - Mostrar todos os medicamentos")
+    print("4 - Cadastrar Cliente")
+    print("5 - Consultar Cliente")
+    print("6 - Mostrar todos os clientes")
+    print("0 - Sair")
+    opcao = input("Escolha uma opção: ")
+
+    if opcao == "1":
+        nome = input("Digite o nome do medicamento: ")
+        quantidade = int(input("Digite a quantidade: "))
+        validade = input("Digite a validade (dd/mm/yyyy): ")
+        add_medicamento(nome, quantidade, validade)
+        print("Medicamento adicionado com sucesso!")
+    elif opcao == "2":
+        nome = input("Digite o nome do medicamento a ser removido: ")
+        remove_medicamento(nome)
+        print("Medicamento removido com sucesso!")
+    elif opcao == "3":
+        mostrar_medicamentos()
+    elif opcao == "4":
+        nome = input("Digite o nome do cliente: ")
+        idade = int(input("Digite a idade do cliente: "))
+        endereco = input("Digite o endereço do cliente: ")
+        cadastrar_cliente(nome, idade, endereco)
+        print("Cliente cadastrado com sucesso!")
+    elif opcao == "5":
+        nome = input("Digite o nome do cliente a ser consultado: ")
+        print(consulta_cliente(nome))
+    elif opcao == "6":
+        mostrar_clientes()
+    elif opcao == "0":
+        break
+    else:
+        print("Opção inválida.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+elif opcao == "7":
+    print("1 - Mostrar todos os clientes")
+    print("2 - Consultar cliente por nome")
+    sub_opcao = input("Escolha uma sub-opção: ")
+    if sub_opcao == "1":
+        cur.execute("SELECT * FROM Clientes;")
+        results = cur.fetchall()
+        if results:
+            print("Clientes cadastrados:")
+            for result in results:
+                print(f"Nome: {result[0]}, Idade: {result[1]}, Endereço: {result[2]}")
+        else:
+            print("Não há clientes cadastrados.")
+    elif sub_opcao == "2":
+        nome = input("Digite o nome do cliente a ser consultado: ")
+        print(consulta_cliente(nome))
+    else:
+        print("Sub-opção inválida.")
+
+
+
+
+Este código é um programa de gerenciamento de medicamentos e clientes de uma farmácia. Ele foi escrito em Python e utiliza o banco de dados PostgreSQL para armazenar as informações.
+
+O programa oferece as seguintes opções:
+
+Adicionar Medicamento - Permite adicionar um novo medicamento ao estoque da farmácia. O usuário deve inserir o nome, a quantidade e a validade do medicamento.
+
+Remover Medicamento - Permite remover um medicamento do estoque da farmácia. O usuário deve inserir o nome do medicamento a ser removido.
+
+Mostrar todos os medicamentos - Mostra uma lista de todos os medicamentos presentes no estoque da farmácia.
+
+Consultar Medicamento - Permite consultar as informações de um medicamento específico. O usuário deve inserir o nome do medicamento a ser consultado.
+
+Cadastrar Cliente - Permite cadastrar um novo cliente da farmácia. O usuário deve inserir o nome, a idade e o endereço do cliente.
+
+Mostrar todos os clientes - Mostra uma lista de todos os clientes cadastrados na farmácia.
+
+O programa utiliza o módulo psycopg2 para se comunicar com o banco de dados PostgreSQL. Ele também utiliza a classe datetime para trabalhar com datas. O código foi escrito em um loop while, que permite que o usuário escolha uma opção a cada vez que o programa é executado.
+
+
+
+Este é um código em Python que utiliza a biblioteca psycopg2 para interagir com um banco de dados PostgreSQL. O objetivo do código é simular um sistema de gerenciamento de medicamentos e clientes de uma farmácia.
+
+No início do código, é estabelecida a conexão com o banco de dados através da função psycopg2.connect(). Em seguida, o cursor da conexão é criado utilizando o método conn.cursor().
+
+O código possui diversas funções que interagem com o banco de dados. A função add_medicamento() adiciona um medicamento ao banco de dados, recebendo como parâmetros o nome do medicamento, a quantidade e a validade. A função remove_medicamento() remove um medicamento do banco de dados pelo nome. A função consulta_medicamento() realiza uma busca no banco de dados pelo nome do medicamento e retorna uma string com as informações do medicamento caso ele seja encontrado, ou uma mensagem de "Medicamento não encontrado" caso contrário. A função cadastrar_cliente() adiciona um novo cliente ao banco de dados, recebendo como parâmetros o nome, a idade e o endereço do cliente. A função consulta_cliente() busca um cliente no banco de dados pelo nome e retorna as informações do cliente caso ele seja encontrado, ou uma mensagem de "Cliente não encontrado" caso contrário.
+
+No corpo do código, há um loop que exibe um menu de opções ao usuário e realiza ações de acordo com a opção selecionada. A opção "1" adiciona um medicamento, solicitando ao usuário que insira as informações do medicamento através do input(). A opção "2" remove um medicamento, solicitando ao usuário que digite o nome do medicamento a ser removido. A opção "3" lista todos os medicamentos cadastrados. A opção "4" busca um medicamento pelo nome e exibe as informações do medicamento. A opção "5" cadastra um novo cliente, solicitando ao usuário que insira as informações do cliente através do input(). A opção "7" exibe um sub-menu com duas opções: "1" lista todos os clientes cadastrados, e "2" busca um cliente pelo nome. A opção "0" finaliza o programa.
+
+O código utiliza a classe datetime da biblioteca padrão do Python para manipular as datas de validade dos medicamentos, convertendo as datas inseridas pelo usuário em objetos datetime com o método datetime.strptime().
+
+Em resumo, o código utiliza a biblioteca psycopg2 para interagir com um banco de dados PostgreSQL, e implementa funções que realizam operações de inserção, remoção e busca de medicamentos e clientes no banco de dados. O código também possui um loop que exibe um menu de opções ao usuário e utiliza a classe datetime para manipular as datas de validade dos medicamentos.
+
